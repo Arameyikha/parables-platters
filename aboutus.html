@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aboutus</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+
+        body {
+
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            animation: glow 1.5s infinite alternate;
+
+        }
+
+        footer {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 80%;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+
+        }
+
+        .chatwithus {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 10%;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+            color: #ffcbc288;
+            font-size: 15px;
+
+        }
+
+        .chatwithus:hover {
+
+            background: #ff815423;
+
+        }
+
+        .aboutus {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 10%;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 1180px;
+            margin-bottom: 30px;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+            color: #ffcbc288;
+            font-size: 15px;
+
+        }
+
+        .aboutus:hover {
+
+            background: #ff815423;
+
+        }
+
+        .menu {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 170px;
+            margin-bottom: 70px;
+            font-size: 20px;
+
+        }
+
+        .menu-item {
+
+            background: #2c2c2c;
+            border-radius: 10px;
+            margin: 25px;
+            padding: 20px;
+            width: 270px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+
+        }
+
+        .menu-item:hover {
+
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+
+        }
+
+        img {
+
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+
+        }
+
+        button {
+
+            background: #ffcbc2;
+            color: green;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 22px;
+
+        }
+
+        button:hover {
+
+            background: #ff7b4b;
+
+        }
+
+        .extra {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 10%;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 200px;
+            margin-bottom: 30px;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+            color: #ffcbc288;
+            font-size: 15px;
+
+        }
+
+        .extra:hover {
+
+            background: #ff815423;
+
+        }
+
+        .popup {
+
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            text-align: left;
+
+        }
+
+        .popup input,
+        .popup textarea {
+
+            width: 70%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        .popup button {
+
+            color: black;
+            background: #28a745;
+
+        }
+
+        .popup.failure {
+
+            background: #f8d7da;
+
+        }
+
+        .popup.success {
+
+            background: #d4edda;
+
+        }
+
+        .ads {
+
+
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            width: 20%;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 1040px;
+            margin-bottom: 160px;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+            color: #ffcbc288;
+            font-size: 15px;
+
+        }
+
+        .ads img { 
+
+            height: 150px;
+        }
+
+        .a1 { 
+
+            margin-right: 700px;
+            
+        }
+
+        @keyframes glow {
+
+            0% {
+                text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347;
+            }
+
+            100% {
+                text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+        body {
+
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            animation: glow 1.5s infinite alternate;
+
+        }
+
+        header {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+
+            font-size: 40px;
+            text-align: center;
+
+        }
+
+        footer {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 80%;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+
+        }
+
+        .chatwithus {
+
+            background: rgba(0, 0, 0, 0.8);
+            width: 50px;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.3);
+            color: #ffcbc288;
+            font-size: 13px;
+
+        }
+
+        .chatwithus:hover {
+
+            background: #ff815423;
+
+        }
+
+        .menu {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 170px;
+            margin-bottom: 70px;
+            font-size: 18px;
+
+        }
+
+        .menu-item {
+
+            background: #2c2c2c;
+            border-radius: 10px;
+            margin: 25px;
+            padding: 20px;
+            width: 230px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+
+        }
+
+        .menu-item:hover {
+
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+
+        }
+
+        img {
+
+            width: 100%;
+            height: 187px;
+            border-radius: 10px;
+
+        }
+
+        button {
+
+            background: #ffcbc2;
+            color: green;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 20px;
+
+        }
+
+        button:hover {
+
+            background: #ff7b4b;
+
+        }
+
+        .popup {
+
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            text-align: left;
+
+        }
+
+        .popup input,
+        .popup textarea {
+
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        .popup button {
+            
+            color: black;
+            background: #28a745;
+            font-size: 17px;
+            margin-top: 10px;
+
+        }
+
+        .popup.failure {
+
+            background: #f8d7da;
+
+        }
+
+        .popup.success {
+
+            background: #d4edda;
+
+        }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .menu-item {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="a1">
+
+        <h4>ceo: thato morake</h4>
+
+        <p>
+            
+            ceo, co-founder & majority shareholder of a1 (pty) ltd
+            
+            thato siyabonga morake is a highly respected and visionary entrepreneur, renowned for his exceptional leadership skills, strategic foresight, and steadfast commitment to excellence. 
+            
+            his dynamic leadership and comprehensive management acumen have been integral to the organization’s sustained growth and success.
+            
+            as the architect behind a1's business model and operational structure, morake’s strategic vision has been the driving force behind the company’s remarkable trajectory, navigating both early-stage challenges and complex market dynamics with aplomb.
+            
+            morake is known for his ability to cultivate talent, recognizing the importance of building diverse, high-performing teams that are united by a common vision and set of values.
+            
+            morake's role as ceo involves overseeing the company's long-term strategy, ensuring robust financial health, and enhancing operational efficiency. 
+            
+            he is particularly focused on future-proofing the organization through a combination of technological innovation, sustainable business practices, and strategic partnerships with industry leaders. 
+            
+            this forward-thinking approach has helped a1 stay ahead of the curve, adapt to changing market demands, and deliver tangible results to its stakeholders.
+            
+            he holds a strong belief in the setting of corporate social responsibility (csr) and understands the importance of businesses contributing to their communities and society at large. 
+            
+            </p>
+
+            <h4>senior director: philani kemele</h4>
+
+            <p></p>
+
+            <h4>senior manager: siyabonga</h4>
+
+            <p>
+                
+                siyabonga stands as a1's senior manager responsible for ensuring that the company’s operations on the ground are executed with precision, efficiency, and seamless coordination. 
+
+                he plays a crucial role in translating high-level strategies and directives into actionable results, handling the logistical and managerial components that bring the company's vision to life. 
+                
+                his work is often physical, yet always purposeful, as he ensures that every action, from the smallest detail to the largest company-wide project, is executed flawlessly. 
+                
+                his position is critical to ensuring that the company’s extensive portfolio of subsidiaries — including parables & platters, aircav, datalite, mount sinai, vast marketing, and others — runs smoothly on the operational level. 
+                
+                he is the "head-hunter," a term that aptly captures his responsibility for identifying, managing, and deploying the right talent, resources, and actions to ensure that every initiative, no matter how complex or multi-faceted, is brought to fruition. 
+                
+                he’s the go-to person when it comes to logistical concerns, handling the "where" and "how" of company projects, and ensuring that the right resources are in the right place at the right time.
+                
+                on a daily basis, siyabonga is involved in the movement and distribution of people, goods, and services. 
+                
+                whether it’s dispatching teams to specific locations, coordinating the delivery of materials or services, or handling complex logistical challenges, siyabonga is always in the thick of it, ensuring that operations move forward efficiently. 
+                
+                in addition to his logistical expertise, siyabonga’s responsibilities also include managing the employees who fall under his rank and ensuring the smooth functioning of the teams he oversees. 
+                
+                as a senior manager, he has the unique task of managing both people and processes, ensuring that his team is not only performing at a high level but is also aligned with a1’s broader strategic objectives. 
+                
+                his approachable and solution-oriented mindset allows him to build strong relationships with his teams, while also maintaining the focus necessary to achieve operational excellence.
+                
+                one of siyabonga’s greatest strengths is his ability to remain calm under pressure, particularly when the inevitable challenges of logistical management arise. 
+                
+                his role is inherently stressful, as he is often the one tasked with solving problems in real-time — from last-minute changes to project timelines to urgent resource allocations. 
+                
+                however, siyabonga’s ability to keep a level head in these situations makes him an invaluable resource to both his direct reports and his senior leadership team. 
+                
+                he ensures that the employees within his purview are well-trained, motivated, and fully equipped to handle the demands of their roles. 
+                
+                whether it’s providing training for new hires or developing strategies for employee retention and growth, siyabonga takes a hands-on approach to team management. His leadership is characterized by consistency, reliability, and a strong focus on maintaining high levels of productivity, while also fostering a collaborative and supportive working environment.
+                
+                he lives by the adage that "a job is only complete when it's done right," and this mindset permeates every aspect of his work.
+                
+                </p>
+
+    </section>
+
+    <footer>a1 (pty) ltd</footer>
+
+</body>
+
+</html>
+
+<!-- design this properly and centerly and middlely. it's an about us page, and this is too bland and dull and mis-aligned. align everything in the center, and organise everything and add additional features as well in this aboutus page. add lots of features that I didn't add here Myself. and I mean a lot.  -->
+
+<!-- all of our details must be here as well... all of them, including contacts, and everything, and even company documents. south africa. cipc. headquarters. -->
+
+<!-- social media. etc. -->
+
+<!-- add lots of buttons and links. -->
+
+<!-- make everything in this page downloadable. --> 
+
+<!--  go all out on the styling, and make everything animate, and dance, and harmonious. -->
+
+<!-- make everything functional and robust, and free of errors, and bugs. -->
+
+<!-- precise logic... precise code. -->
+
+<!-- make this the best aboutus page that you've ever made. -->
+
+
+
+
+

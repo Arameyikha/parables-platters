@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>purchase meal coupon</title>
+
+    <style>
+        /* Your existing styles can be reused here */
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Purchase Your 31-Day Meal Coupon</h1>
+    </header>
+
+    <section>
+
+        <h2>Get a 31-Day Meal Coupon for Parables & Platters!</h2>
+
+        <p>Enjoy our delicious meals every day for a month with a unique meal coupon. The coupon comes with a QR code that you can print out and present for meals. Purchase via cash or card.</p>
+        
+        <!-- Coupon purchase form -->
+        <form id="purchaseForm">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <br>
+
+            <label for="paymentMethod">Payment Method:</label>
+
+            <select id="paymentMethod">
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+            </select>
+
+            <br>
+
+            <button type="submit">Purchase Coupon</button>
+
+        </form>
+
+    </section>
+
+    <!-- QR code generation section -->
+    <section id="couponInfo" style="display:none;">
+
+        <h3>your coupon</h3>
+
+        <p>your coupon is ready! scan the QR code below to redeem your 31-day meals:</p>
+
+        <div id="qrCode"></div>
+
+        <button onclick="printCoupon()">print coupon</button>
+
+    </section>
+
+    <footer>
+        <button onclick="window.location.href='index.html'">back to menu</button>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+
+    <script>
+
+        // Handle form submission
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateCoupon();
+        });
+
+        // Generate the QR code for the coupon
+        function generateCoupon() {
+
+            const name = document.getElementById('name').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const couponData = `31-Day Meal Coupon for ${name}, Payment Method: ${paymentMethod}`;
+            
+            // Generate QR code
+            QRCode.toDataURL(couponData, function(err, url) {
+                if (err) console.error(err);
+                document.getElementById('qrCode').innerHTML = `<img src="${url}" alt="QR Code">`;
+                document.getElementById('couponInfo').style.display = 'block';
+            });
+
+        }
+
+        // Print coupon
+        function printCoupon() {
+
+            const qrImage = document.getElementById('qrCode').innerHTML;
+            const printWindow = window.open('', '', 'width=600,height=400');
+            printWindow.document.write('<html><body>');
+            printWindow.document.write('<h3>Your Meal Coupon</h3>');
+            printWindow.document.write(qrImage);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
